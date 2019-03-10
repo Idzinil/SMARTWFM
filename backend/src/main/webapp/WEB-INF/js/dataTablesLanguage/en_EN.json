@@ -1,0 +1,24 @@
+{
+    "decimal":        "",
+    "emptyTable":     "Without results",
+    "info":           "Showing _START_ to _END_ of _TOTAL_ results",
+    "infoEmpty":      "Showing 0 of 0 results",
+    "infoFiltered":   "(filtered from _MAX_ total entries)",
+    "infoPostFix":    "",
+    "thousands":      ",",
+    "lengthMenu":     "See _MENU_ results",
+    "loadingRecords": "Loading...",
+    "processing":     "Processing...",
+    "search":         "Search:",
+    "zeroRecords":    "No matching records found",
+    "paginate": {
+        "first":      "First",
+        "last":       "Latest",
+        "next":       "Next",
+        "previous":   "Previous"
+    },
+    "aria": {
+        "sortAscending":  ": order ascending columns",
+        "sortDescending": ": order descending columns"
+    }
+}

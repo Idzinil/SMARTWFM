@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+
+.nav {
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 1px;
+    color:#6E6E6E;
+    font-size: 20px;
+    float: left; /* Clear floats */
+    width: 100%;
+}
+.nav li {
+    float: left;
+    margin-right: 120px;
+    position: relative;
+}
+.nav a {
+    display: block;
+    padding: 5px;
+    color:#848484;
+}
+.nav ul {
+    position: absolute;
+}
+#ventanaBienvenidaSytecso .contenido .url_cont {
+	 list-style-image: url("../img/check.png");
+	 font-weight: bold;
+	 color:#A4A4A4;
+	 font-size: 15px;
+}

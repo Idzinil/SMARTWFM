@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+ 	http://www.springframework.org/schema/mvc
+ 	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+ 	http://www.springframework.org/schema/context
+ 	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+	<context:annotation-config />
+	<bean id="vocuentasconstraintBean"
+		class="com.sytecsosmartbilling.component.VOCuentasConstraint">
+		<property name="cuenta">
+			<ref bean="cuentaBeanNcta" />
+		</property>
+		<property name="eventosmartbilling">
+			<ref bean="eventosmartbillingBean" />
+		</property>
+		<property name="compra">
+			<ref bean="compraBean"></ref>
+		</property>
+		<property name="producto">
+			<ref bean="productoBean"></ref>
+		</property>
+		<property name="impuesto">
+			<ref bean="impuestoBean"></ref>
+		</property>
+		<property name="impuestoEventoItems">
+			<ref bean="impuestoEventoBean"></ref>
+		</property>
+	</bean>
+
+	<!-- <bean id="cuentaBean" class="com.sytecsosmartbilling.beans.Cuenta"></bean> -->
+	<bean id="datosfiscalesBean"
+		class="com.sytecsosmartbilling.beans.DatosFiscales"></bean>
+	<bean id="eventosmartbillingBean"
+		class="com.sytecsosmartbilling.beans.EventoSmartBilling"></bean>
+	<bean id="impuestoBean"
+		class="com.sytecsosmartbilling.beans.Impuesto"></bean>
+	<bean id="impuestoEventoBean"
+		class="com.sytecsosmartbilling.beans.ImpuestoEventoItem"></bean>
+
+	<!-- SmartBilling-Seccion para el modulo de compras -->
+	<bean id="compraBean" class="com.sytecsosmartbilling.beans.Compra"></bean>
+	<bean id="productoBean"
+		class="com.sytecsosmartbilling.beans.Producto"></bean>
+
+
+	<bean id="cuentaBeanNcta"
+		class="com.sytecsosmartbilling.beans.Cuenta">
+		<property name="unidadfacturacionNcta">
+			<ref bean="unidadfacturacionBean" />
+		</property>
+	</bean>
+
+	<bean id="unidadfacturacionNcta"
+		class="com.sytecsosmartbilling.beans.UnidadFacturacion">
+		<property name="datosfiscales">
+			<ref bean="datosfiscalesBean" />
+		</property>
+	</bean>
+
+	<bean id="compraNCompra"
+		class="com.sytecsosmartbilling.beans.Compra">
+		<property name="ConttrolPeriodosNControlPeriodos">
+			<ref bean="ControlPeriodos" />
+		</property>
+	</bean>
+
+</beans>
